@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+<div class="login-container"> 
+    <h2> Time Logger X (TLX) </h2>
+    <h2>Login</h2>
+    <form method="POST" action="{{ url_for('login') }}">
+        {{ form.hidden_tag() }}
+        <p>{{ form.username.label }} {{ form.username() }}</p>
+        <p>{{ form.password.label }} {{ form.password() }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Dashboard</h2>
+<p>Welcome, {{ current_user.username }}!</p>
+<div class="card-container">
+    <a href="{{ url_for('time_log') }}" class="card">
+        <h2> Time Log </h2>
+        <p>Log your work hours and view past time logs.</p>
+    </a>
+    <a href="{{ url_for('request_change') }}" class="card">
+        <h2>Request Change</h2>
+        <p>Request changes to your work schedule or shifts.</p>
+    </a>
+    <a href="{{ url_for('generate_report') }}" class="card">
+        <h2> Report</h2>
+        <p> Generate reports to view employee analytics. </p>
+        </a>
+        <a href="{{ url_for('schedule') }}" class="card">
+            <h2>Weekly Schedule</h2>
+            <p>View your weekly work schedule and assigned shifts.</p>
+        </a>
+</div>
+{% endblock %}

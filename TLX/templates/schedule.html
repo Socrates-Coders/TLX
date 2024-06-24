@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Weekly Schedule</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for schedule in schedules %}
+                <tr>
+                    <td>{{ schedule.start_time.strftime('%A') }}</td>
+                    <td>{{ schedule.start_time.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td>{{ schedule.end_time.strftime('%Y-%m-%d %H:%M') }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

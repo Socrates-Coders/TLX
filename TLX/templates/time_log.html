@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Log Time{% endblock %}
+{% block content %}
+<h2>Log Time</h2>
+<form method="POST" action="{{ url_for('time_log') }}">
+    {{ form.hidden_tag() }}
+    <p>{{ form.start_time.label }} {{ form.start_time() }}</p>
+    <p>{{ form.end_time.label }} {{ form.end_time() }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

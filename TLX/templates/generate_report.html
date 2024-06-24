@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Generate Report{% endblock %}
+{% block content %}
+<h2>Generate Report</h2>
+<form method="POST" action="{{ url_for('generate_report') }}">
+    {{ form.hidden_tag() }}
+    <p>{{ form.report_type.label }} {{ form.report_type() }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

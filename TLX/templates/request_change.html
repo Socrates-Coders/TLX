@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Request Change{% endblock %}
+{% block content %}
+<h2>Request Change</h2>
+<form method="POST" action="{{ url_for('request_change') }}">
+    {{ form.hidden_tag() }}
+    <p>{{ form.query.label }} {{ form.query() }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
